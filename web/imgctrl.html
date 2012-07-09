@@ -1,2 +1,34 @@
+<!DOCTYPE html>
 <html>
+	<body>
+		<link rel="stylesheet" href="../css/agile_carousel.css" type='text/css'>
+		
+		<div class="slideshow" id="flavor_2">
+			<h1>"Sample Movie"</h1>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
+		<script src="../scripts/agile_carousel.alpha.js"></script>
+		
+		<script>
+		$.getJSON("../agile_carousel_data.php", function(data) {
+		    	$(document).ready(function(){
+		            $("#flavor_2").agile_carousel({
+		                carousel_data: data,
+		                carousel_outer_height: 360,
+		                carousel_height: 350,
+		                slide_height: 350,
+		                carousel_outer_width: 380,
+		                slide_width: 380,
+		                transition_type: "fade",
+		                transition_time: 600,
+		                timer: 3000,
+		                continuous_scrolling: true,
+		                control_set_1: "numbered_buttons,previous_button,pause_button,next_button",
+		                control_set_2: "content_buttons",
+		                change_on_hover: "content_buttons"
+		            });
+		        });
+		    });
+		</script>
+	</body>
 </html>
