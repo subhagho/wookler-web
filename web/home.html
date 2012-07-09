@@ -3,6 +3,7 @@
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
 
+	
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
@@ -28,7 +29,8 @@
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
-//        event.target.playVideo();
+       event.target.playVideo();
+		invokeAtIntervals();
 
       }
 
@@ -44,137 +46,69 @@
         player.stopVideo();
         }
         }
-	
-    </script>
-
-<!-- TESTING FOR PLAYER 2 STARTS HERE -->
-
-<br/>
-<div id="player2"></div>
-
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-/*     var tag2 = document.createElement('script');
-      tag2.src = "http://www.youtube.com/player_api";
-      var firstScriptTag2 = document.getElementsByTagName('script')[2];
-      firstScriptTag.parentNode.insertBefore(tag2, firstScriptTag2);
-*/
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      
-      function create2nd()
-      {
-      var player2;
- //     function onYouTubePlayerAPIReady() {
-        player2 = new YT.Player('player2', {
-          height: '300',
-          width: '400',
-          videoId: 'o4gHCmTQDVI',  //TDKR - Nolan rules!!
-          playerVars: { 'autoplay': 0, 'controls': 1},
-          events: {
-            'onReady': onPlayer2Ready,
-            'onStateChange': onPlayer2StateChange
-            
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onplayer2Ready(event) {
-        event.target.playVideo();
-
-      }
-
-      var done2 = false;
-      function onplayer2StateChange(event) {
-      }
-      function stopVideo() {
-        if (player2) {
-        player2.stopVideo();
-        }
-        }
-
-	
-    </script>
+        
     
-<!-- TESTING FOR PLAYER 2 ENDS HERE -->
-
-<script>
-	function player2Data()
+    var duration = player.getCurrentTime();
+	var last_duration = duration;
+	var productloaded = false;	    
+	function getAndBindData()
 	{
-		player.playVideo();
 
-		 var player2;
-
- //     function onYouTubePlayerAPIReady() {
-        player2 = new YT.Player('player2', {
-          height: '300',
-          width: '400',
-          videoId: 'o4gHCmTQDVI',  //TDKR - Nolan rules!!
-          playerVars: { 'autoplay': 0, 'controls': 1},
-          events: {
-            'onReady': onPlayer2Ready,
-            'onStateChange': onPlayer2StateChange
-            
-          }
-          
-        });
-//document.write("Hello World!");
-
-
+		duration = player.getCurrentTime();	
+		
+		//for now i am just going to display the contents at > 10 second
+		// need to replace with actual ajax call and passing of markers
+		//for now just once and stop
+		if(duration > 35 && !productloaded)
+		{
+			loadproducts();
+			productloaded = true;
+			//player.pauseVideo();
+		}	
+					
 	}
-
-</script>
+	
+	function invokeAtIntervals()
+	{
+		setInterval((getAndBindData),10);
+	}
+	
+    </script>
     
-<!--<form>-->
-<br />
-<br />
-<br />
-<!--Time after which cool stuff will start: <input type="text" name="time" /> milliseconds <br />
--->
-<!--<br />
-<br />
-Enter video ID of cool stuff: <input type="text" name="coolID" />
-<br />
-<br />-->
-
-<button onclick="player2Data()">Lets do this</button>
-<!--<button onclick>Lets do this</button>-->
-
-<!--</form>-->
-
 <br/>
 <br/>
+
+<!-- This is the section for Product information Load -->
 		<link rel="stylesheet" href="../css/agile_carousel.css" type='text/css'>
 		
 		<div class="slideshow" id="flavor_2">
-			<h1>"Sample Movie"</h1>
 		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
 		<script src="../scripts/agile_carousel.alpha.js"></script>
 		
 		<script>
-		$.getJSON("../agile_carousel_data.php", function(data) {
-		    	$(document).ready(function(){
-		            $("#flavor_2").agile_carousel({
-		                carousel_data: data,
-		                carousel_outer_height: 360,
-		                carousel_height: 350,
-		                slide_height: 350,
-		                carousel_outer_width: 380,
-		                slide_width: 380,
-		                transition_type: "fade",
-		                transition_time: 600,
-		                timer: 3000,
-		                continuous_scrolling: true,
-		                control_set_1: "numbered_buttons,previous_button,pause_button,next_button",
-		                control_set_2: "content_buttons",
-		                change_on_hover: "content_buttons"
-		            });
-		        });
-		    });
+		function loadproducts()
+		{
+			$.getJSON("../agile_carousel_data.php", function(data) {
+			            $("#flavor_2").agile_carousel({
+			                carousel_data: data,
+			                carousel_outer_height: 360,
+			                carousel_height: 350,
+			                slide_height: 350,
+			                carousel_outer_width: 380,
+			                slide_width: 380,
+			                transition_type: "fade",
+			                transition_time: 600,
+			                timer: 3000,
+			                continuous_scrolling: true,
+			                control_set_1: "numbered_buttons,previous_button,pause_button,next_button",
+			                control_set_2: "content_buttons",
+			                change_on_hover: "content_buttons"
+			            });
+			    });
+		   }
 		</script>
 
-
+	
   </body>
 </html>

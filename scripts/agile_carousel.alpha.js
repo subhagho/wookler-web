@@ -15,7 +15,7 @@
         var defaults = {
             timer: 0,
             continuous_scrolling: false,
-            transition_type: "slide",
+            transition_type: "fade",
             transition_time: 600,
 			number_slides_visible: 1,
 			change_on_hover: "",
