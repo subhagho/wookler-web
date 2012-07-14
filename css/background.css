@@ -3,3 +3,10 @@ background-color:#d0f0f6;
 }
 
 .thumbs{ height: 200px; float: left; }
+
+.ytplayer{
+	position:relative;
+ top:20px;
+ left:40px;
+margin: 0 auto;
+}
