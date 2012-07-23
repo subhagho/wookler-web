@@ -1,7 +1,13 @@
 //get all videos
+//load the player once even before any images are clicked
+//var k = 0;
+var ytvideolink;
+var syncmutex;
+
 function getallvideos(val)
 {
 	//alert(val);
+	syncmutex= false;
 	$.getJSON("http://localhost:8090/rest/wookler/core/data/videos/-",
 		function(jdata)
 		{
@@ -19,17 +25,27 @@ function getallvideos(val)
 				}
 				
 			});
+		
+		// in the end attach a custom event to section
+
+				
+		//$('body').append("<h1>triggering event</h1></br>");
+
+		$('#intro').trigger("sectionloaded");
+
+
 		});
+
 }
 
 
 
-var ytvideolink;
+
 		
 		function loadytVideosbyId(videoid){
 			
 			//alert("https://gdata.youtube.com/feeds/api/videos/"+videoid+"?v=2&alt=json");
-			
+						
 			$.getJSON("https://gdata.youtube.com/feeds/api/videos/"+videoid+"?v=2&alt=json",
 			function(data)
 			{
@@ -45,6 +61,9 @@ var ytvideolink;
 							return false;
 						}
 						videolink=mediacontentval['url'];
+						
+
+
 						
 					});
 				
@@ -67,16 +86,24 @@ var ytvideolink;
 						$(document.createElement("img"))
 					    	.attr({ src: mediathumbnailval['url'], videolink: clickthru})
     						.addClass("thumbs")
-    						.appendTo('#videoimages')
+    						.appendTo('#intro')
     						.click(function(){
         					ytvideolink = $(this).attr("videolink");
 
         					loadAndPlayVideo(ytvideolink);
-    						})
+        					
+
+    						});
     						
     						//k=k+1;
-
+    						//$('body').append("<h1>creating images<h1></br>");
+    						//$('body').append($('img').first().attr("videolink"));
 
 					});
+				
+				//syncmutex = true;
+					
 				});
+				
+				
 		}

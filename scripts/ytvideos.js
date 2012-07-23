@@ -34,9 +34,9 @@
       {
       	if(!player)
       	{
-      	  player = new YT.Player('player', {
-          height: '300',
-          width: '400',
+      	  player = new YT.Player('mainplayer', {
+          height: '400',
+          width: '960',
           videoId: val,  //TDKR - Nolan rules!!
           playerVars: { 'autoplay': 1, 'controls': 1},
           events: {
@@ -49,6 +49,7 @@
           
       	else
       	{
+      		//alert(player);
       		player.loadVideoById(val,0,'medium');
 
       	}

@@ -3,40 +3,38 @@
 <head>
 <title>Wookler</title>
 <meta charset="iso-8859-1">
-<link rel="stylesheet" href="..//css/layout.css" type="text/css">
+<link rel="stylesheet" href="../css/layout.css" type="text/css">
 <!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
 <!-- Featured Slider Elements -->
-<script src="..//scripts/jquery-1.4.1.min.js"></script>
-<script src="..//scripts/jquery-s3slider.js"></script>
-<script src="..//scripts/jquery-s3slider.setup.js"></script>
+<script src="../scripts/jquery-1.4.1.min.js"></script>
+<script src="../scripts/jquery-s3slider.js"></script>
+<script src="../scripts/jquery-s3slider.setup.js"></script>
+<script src="../scripts/getvideos.js"></script>
+<script src="../scripts/ytvideos.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+
 <!-- End Featured Slider Elements -->
 </head>
 <body>	
-	<script>
-	function player2Data()
-	{
-		player.playVideo();
 
-		 var player2;
+<script>
+	
+		//$('body').append("<h1>binding event</h1></br>");
 
- //     function onYouTubePlayerAPIReady() {
-        player2 = new YT.Player('player2', {
-          height: '300',
-          width: '400',
-          videoId: 'o4gHCmTQDVI',  //TDKR - Nolan rules!!
-          playerVars: { 'autoplay': 0, 'controls': 1},
-          events: {
-            'onReady': onPlayer2Ready,
-            'onStateChange': onPlayer2StateChange
-          }
-          
-        });
-//document.write("Hello World!");
+		$('#intro').on("sectionloaded", function(){
+			$('body').append($('img').first().attr("videolink"));
+		});
+		getallvideos();
 
 
-	}
+   	//$(document).ready($('body').append("<h1>hello world</h1>"+$('img').first().attr('videolink')));
 
+    
+	//$(document).ready(getallvideos());
+	//$(document).ready(helloworld());
+	
 </script>
+
 <div class="wrapper row1">
   <header id="header" class="clear">
     <hgroup>
@@ -76,30 +74,15 @@
   </nav>
 </div>
     <!-- Slider -->
-    <div>
-    <section id="featured_slide_">
-      <!-- ########################################################################################## -->
-      	
-      <ul id="featured_slide_Content">
-        <li class="featured_slide_Image">
-          <figure><a href="#"><img src="..//images/demo/940x340.gif" alt="" /></a>
-            <figcaption>
-              <h2>Keep rotating the videos here in prview mode</h2>
-              <p>Sort by most viewed, tagged etc. This will make call every 5 sec to get the next video</p>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
-      <!-- ########################################################################################## -->
-    </section>
-    </div>
+<div class="ytplayer" id="mainplayer"></div>
+
     <div class="bottom_video_bar">
       <!-- ########################################################################################## -->
       	
       <!-- Introduction -->
     <h1><br>Recently Tagged Videos <br></h1>
        <section id="intro" class="clear">
-        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
+<!--        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
         </article>
         <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
         </article>
@@ -109,6 +92,7 @@
         </article>
         <article class="one_fifth lastbox"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
         </article>
+-->
       </section>
      </div>
       <!-- / Introduction -->
