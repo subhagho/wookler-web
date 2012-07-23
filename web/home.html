@@ -1,11 +1,11 @@
 <html>
   <body class="mainbody">
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <br/>
-    <br/>
-    <br/>
-    
-    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
+    <script src="../scripts/getvideos.js"></script>
+    <script src="../scripts/ytvideos.js"></script>	
+
+        
     <input type="text" id="srchtxt" class="searchtext"/>
     <button type="button" onclick="onbuttonclick()" class="searchbutton">Search</button> 
     
@@ -13,7 +13,6 @@
     <br/>
     
     <div id="videoimages"></div>
-
 	    
     <!--get search params-->
     <script>
@@ -25,182 +24,15 @@
 			$("#videoimages").empty();		
 			//now search fresh
 			var searchvalue = $("#srchtxt").val();
-     		//alert(searchvalue);
-			loadVideos(searchvalue);
-			
-
+			//alert(searchvalue);
+			getallvideos(searchvalue);
 
 		}
 	
     </script>
-    <script>	 
-		var ytvideolink;
-		
-		function loadVideos(val){
-			//alert(val);
-			$.getJSON("https://gdata.youtube.com/feeds/api/videos?q="+val+"&alt=json&max-results=6",
-			function(data)
-			{
-				//alert(data.feed.media$group.media$group.media$content);
-				//$('body').append("<h2>"+data.link+"</h2>");
-				
-				//store video links in this array and associate with thumbs
-				//weird way to do this because they are at the same level in diffrent lists in json form google
-				var videolinks= new Array();
-				
-				$.each(data.feed.entry, function(m,entryvalue)
-				{
-					//$('body').append("<h2>"+entryvalue['media$group']['media$content'][0]['url']+"</h2>"+"<br></br>");
-					$.each(entryvalue['media$group']['media$content'], function(p,mediacontentval)
-					{
-												
-						//alert('i am here');
-						if(p>=1)
-						{
-							return false;
-						}
-						videolinks[m]=mediacontentval['url'];
-						
-					});
-
-				});
-				
-				var k =0;
-				$.each(data.feed.entry, function(i,entryvalue)
-				{
-
-					$.each(entryvalue['media$group']['media$thumbnail'], function(j,mediathumbnailval)
-					{
-
-												
-						if(j>=1)
-						{
-							return false;
-						}
-						
-						var start_index= videolinks[k].indexOf("/v/");
-						var end_index= videolinks[k].indexOf("?version");
-						
-						var clickthru = videolinks[k].substring(start_index+3,end_index);
-						
-						
-						$(document.createElement("img"))
-					    	.attr({ src: mediathumbnailval['url'], videolink: clickthru})
-    						.addClass("thumbs")
-    						.appendTo('#videoimages')
-    						.click(function(){
-        					ytvideolink = $(this).attr("videolink");
-        					
-        					//reset product info
-        					//$("#flavor_2").fadeOut('slow');
-        					//$("#flavor_2").empty();
-        					loadAndPlayVideo(ytvideolink);
-    						})
-    						
-    						k=k+1;
-
-
-					});
-				});
-			});
-		}
-	</script>
-
     <!--load player-->
-    <div class="ytplayer" id="player"></div>
+<div class="ytplayer" id="player"></div>
     
-    
-    
-    <script>
-      //var searchvalue = $("#srchtxt").val();
-      
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-      tag.src = "http://www.youtube.com/player_api";
-      var firstScriptTag = document.getElementsByTagName('script')[1];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      
-      
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-       //loadVideos(val);
-       //alert(link);
-       event.target.loadVideoById(link,0,'medium');
-       event.target.playvideo();
-	   invokeAtIntervals();
-
-      }
-
-      var done = false;
-      function onPlayerStateChange(event) {
-/*        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }*/
-      }
-      function stopVideo() {
-        if (player) {
-        player.stopVideo();
-        }
-        }
-        
-      function loadAndPlayVideo(val)
-      {
-      	if(!player)
-      	{
-      	  player = new YT.Player('player', {
-          height: '300',
-          width: '400',
-          videoId: val,  //TDKR - Nolan rules!!
-          playerVars: { 'autoplay': 1, 'controls': 1},
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-         });
-         
-         //player.playVideo();
-        }
-          
-      	else
-      	{
-      		player.loadVideoById(val,0,'medium');
-
-      	}
-      	
-      	invokeAtIntervals();
-      }
-    
-    var duration = player.getCurrentTime();
-	var last_duration = duration;
-	var productloaded = false;	    
-	function getAndBindData()
-	{
-
-		duration = player.getCurrentTime();	
-		
-		//for now i am just going to display the contents at > 10 second
-		// need to replace with actual ajax call and passing of markers
-		//for now just once and stop
-		if(duration > 35 && !productloaded)
-		{
-			loadproducts();
-			productloaded = true;
-			//player.pauseVideo();
-		}	
-					
-	}
-	
-	function invokeAtIntervals()
-	{
-		setInterval((getAndBindData),10);
-	}
-    </script>
     
 <br/>
 <br/>
@@ -212,10 +44,9 @@
 		
 		<div class="slideshow" id="flavor_2">
 		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
 		<script src="../scripts/agile_carousel.alpha.js"></script>
-		
-		<script>
+
+	<script>
 		function loadproducts()
 		{
 			$.getJSON("../agile_carousel_data.php", function(data) {
@@ -238,10 +69,10 @@
 		   }
 		   
 		   
-		</script>
+	</script>
 		
 
-		<script></script>
+
 
 	
   </body>

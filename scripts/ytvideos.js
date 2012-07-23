@@ -1,51 +1,82 @@
-		function loadVideos(val){
-			//alert("enter");
-			$.getJSON("https://gdata.youtube.com/feeds/api/videos?q="+val+"&alt=json",
-			function(data)
-			{
-				//alert(data.feed.media$group.media$group.media$content);
-				//$('body').append("<h2>"+data.link+"</h2>");
-				
-				//store video links in this array and associate with thumbs
-				//weird way to do this because they are at the same level in diffrent lists in json form google
-				var videolinks= new Array();
-				
-				$.each(data.feed.entry, function(m,entryvalue)
-				{
-					//$('body').append("<h2>"+entryvalue['media$group']['media$content'][0]['url']+"</h2>"+"<br></br>");
-					$.each(entryvalue['media$group']['media$content'], function(p,mediacontentval)
-					{
-												
-						//alert('i am here');
-						videolinks[p]=mediacontentval['url'];
-						
-					});
+      var tag = document.createElement('script');
+      tag.src = "http://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[1];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+      
 
-				});
-				
-				var k =0;
-				$.each(data.feed.entry, function(i,entryvalue)
-				{
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+       event.target.loadVideoById(link,0,'medium');
+       event.target.playvideo();
+	   invokeAtIntervals();
 
-					$.each(entryvalue['media$group']['media$thumbnail'], function(j,mediathumbnailval)
-					{
+      }
 
-												
-						if(j>=1)
-						{
-							return false;
-						}
-						k++;
-						//$('body').append("<h2>"+mediathumbnailval['url']+"</h2>"+"<br></br>");
-						$("<img/>").attr({
-							"src": mediathumbnailval['url'],
-							"class": 'thumbs'
-							}).appendTo("#videoimages");
-						//imagelem.click(function(){$(this).fadeIn('slow')})
-						
-					}
-				);
-				});
-			});
-		}
+      var done = false;
+      function onPlayerStateChange(event) {
+/*        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }*/
+      }
+      function stopVideo() {
+        if (player) {
+        player.stopVideo();
+        }
+        }
+        
+      function loadAndPlayVideo(val)
+      {
+      	if(!player)
+      	{
+      	  player = new YT.Player('player', {
+          height: '300',
+          width: '400',
+          videoId: val,  //TDKR - Nolan rules!!
+          playerVars: { 'autoplay': 1, 'controls': 1},
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+         });
+         
+        }
+          
+      	else
+      	{
+      		player.loadVideoById(val,0,'medium');
+
+      	}
+      	
+      	invokeAtIntervals();
+      }
+    
+    var duration = player.getCurrentTime();
+	var last_duration = duration;
+	var productloaded = false;	    
+	function getAndBindData()
+	{
+
+		duration = player.getCurrentTime();	
 		
+		//for now i am just going to display the contents at > 10 second
+		// need to replace with actual ajax call and passing of markers
+		//for now just once and stop
+		if(duration > 35 && !productloaded)
+		{
+			loadproducts();
+			productloaded = true;
+			//player.pauseVideo();
+		}	
+					
+	}
+	
+	function invokeAtIntervals()
+	{
+		setInterval((getAndBindData),10);
+	}
