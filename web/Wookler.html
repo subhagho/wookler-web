@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Wookler</title>
+<meta charset="iso-8859-1">
+<link rel="stylesheet" href="..//css/layout.css" type="text/css">
+<!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
+<!-- Featured Slider Elements -->
+<script src="..//scripts/jquery-1.4.1.min.js"></script>
+<script src="..//scripts/jquery-s3slider.js"></script>
+<script src="..//scripts/jquery-s3slider.setup.js"></script>
+<!-- End Featured Slider Elements -->
+</head>
+<body>	
+	<script>
+	function player2Data()
+	{
+		player.playVideo();
+
+		 var player2;
+
+ //     function onYouTubePlayerAPIReady() {
+        player2 = new YT.Player('player2', {
+          height: '300',
+          width: '400',
+          videoId: 'o4gHCmTQDVI',  //TDKR - Nolan rules!!
+          playerVars: { 'autoplay': 0, 'controls': 1},
+          events: {
+            'onReady': onPlayer2Ready,
+            'onStateChange': onPlayer2StateChange
+          }
+          
+        });
+//document.write("Hello World!");
+
+
+	}
+
+</script>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <hgroup>
+      <h1><a href="#">Wookler</a></h1>
+      <h2>You saw it - We know it</h2>
+    </hgroup>
+  </header>
+</div>
+
+<div class="wrapper row2">
+  <nav id="topnav" class="clear">
+    <ul>
+      <li class="active"><a href="..//web/index.html">Home</a></li>
+      <li><a href="..//web/style-demo.html">Today's Tagged Video</a></li>
+      <li><a href="..//web/full-width.html">Most Tagged Video</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div class="wrapper row2">
+
+  <form action="?" method="get">
+    <input type="search" placeholder="Search" />
+    <input type="submit" value="Search" />
+  </form>
+</div>
+<!-- content -->
+
+<div class="left_col">
+	<nav>
+    <ul>
+      <li class="active"><a href="..//web/index.html">Merchandising</a></li>
+      <li><a href="..//web/style-demo.html">Celebrity</a></li>
+      <li><a href="..//web/full-width.html">Music</a></li>
+      <li><a href="..//web/full-width.html">Background</a></li>
+      </ul>
+  </nav>
+</div>
+    <!-- Slider -->
+    <div>
+    <section id="featured_slide_">
+      <!-- ########################################################################################## -->
+      	
+      <ul id="featured_slide_Content">
+        <li class="featured_slide_Image">
+          <figure><a href="#"><img src="..//images/demo/940x340.gif" alt="" /></a>
+            <figcaption>
+              <h2>Keep rotating the videos here in prview mode</h2>
+              <p>Sort by most viewed, tagged etc. This will make call every 5 sec to get the next video</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <!-- ########################################################################################## -->
+    </section>
+    </div>
+    <div class="bottom_video_bar">
+      <!-- ########################################################################################## -->
+      	
+      <!-- Introduction -->
+    <h1><br>Recently Tagged Videos <br></h1>
+       <section id="intro" class="clear">
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth lastbox"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+      </section>
+     </div>
+      <!-- / Introduction -->
+      <!-- ########################################################################################## -->
+      <!-- Services -->
+<!-- Footer -->
+<!-- Copyright -->
+<div class="wrapper row5">
+  <footer id="copyright" class="clear">
+    <p class="fl_left">Copyright &copy; 2012 Wookler - All Rights Reserved - <a href="#">www.wookler.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
