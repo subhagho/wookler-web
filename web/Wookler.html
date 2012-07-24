@@ -23,7 +23,9 @@
 		$('#intro').on("sectionloaded", function(){
 			$('body').append($('img').first().attr("videolink"));
 		});
-		getallvideos();
+		getallvideos('popular');
+		getallvideos('latest');
+		getallvideos('all');
 
    	//$(document).ready($('body').append("<h1>hello world</h1>"+$('img').first().attr('videolink')));
    
@@ -78,19 +80,7 @@
 <br>
 
 <div>
-       <section id="intro" class="clear">
-       <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>          
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth lastbox"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-
-      </section>
+       <section id="most_popular" class="clear"></section>
      </div>
 <!-- This is section id for most Tagged videos. Not changing the section id -->
 <br>
@@ -98,19 +88,7 @@
 <br>
 
 <div>
-       <section id="intro" class="clear">
-       <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>          
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth lastbox"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-
-      </section>
+       <section id="most_tagged" class="clear"></section>
      </div>
     <!-- This is section id for most Tagged videos. Not changing the section id -->
 <br>
@@ -118,19 +96,7 @@
 <br>
 
 <div>
-       <section id="intro" class="clear">
-       <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>          
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-        <article class="one_fifth lastbox"><a href="#"><img src="../images/demo/166x130.gif" width="166" height="130" alt=""></a>
-        </article>
-
-      </section>
+       <section id="recent_tagged" class="clear"></section>
      </div> 
      
 </body>

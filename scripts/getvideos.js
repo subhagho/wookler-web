@@ -1,16 +1,37 @@
-//get all videos
-//load the player once even before any images are clicked
-//var k = 0;
+
 var ytvideolink;
-var syncmutex;
+
+var url_get_all_videos = "http://localhost:8090/rest/wookler/core/data/videos/-";
+var url_get_latest_videos = "http://localhost:8090/rest/wookler/core/data/videos/latest";
+var url_get_popular_videos = "http://localhost:8090/rest/wookler/core/data/videos/popular";
+
 
 function getallvideos(val)
 {
-	//alert(val);
-	syncmutex= false;
-	$.getJSON("http://localhost:8090/rest/wookler/core/data/videos/-",
-		function(jdata)
-		{
+    
+    var url;
+
+	if(val=='latest')
+	{
+		url = url_get_latest_videos;
+	}
+		
+	else if(val== 'popular')
+	{
+		url = url_get_popular_videos;
+	}
+		
+
+	else
+	{
+		url = url_get_all_videos;
+	}	
+	
+	//get videos with appropriate url
+	
+	//alert(url);
+	
+	$.getJSON(url, function(jdata){
 
 			$.each(jdata.data, function(i,video){
 				
@@ -21,20 +42,14 @@ function getallvideos(val)
 				if(vsrc=="YouTube")
 				{
 					//pass
-					loadytVideosbyId(video.location);
+					loadytVideosbyId(video.location, val);
 				}
 				
 			});
 		
-		// in the end attach a custom event to section
-
-				
-		//$('body').append("<h1>triggering event</h1></br>");
-
+		// in the end attach a custom event to section		
 		$('#intro').trigger("sectionloaded");
-
-
-		});
+	});
 
 }
 
@@ -42,7 +57,10 @@ function getallvideos(val)
 
 
 		
-		function loadytVideosbyId(videoid){
+
+//load youtube videos
+function loadytVideosbyId(videoid, type)
+{
 			
 			//alert("https://gdata.youtube.com/feeds/api/videos/"+videoid+"?v=2&alt=json");
 						
@@ -83,7 +101,31 @@ function getallvideos(val)
 						var clickthru = videolink.substring(start_index+3,end_index);
 						//alert("clickthru url: "+clickthru);
 						
-						$(document.createElement("img"))
+						var image_element = "<article class='one_fifth'><img src='"+mediathumbnailval['url']+"' width='166' height='130' onclick='loadAndPlayVideo(\""+clickthru+"\")'></img></article>";
+						
+						//alert(image_element);
+						
+						var section_element;
+
+						if(type=='latest')
+						{
+							section_element = '#recent_tagged';
+						}
+							
+						else if(type== 'popular')
+						{
+							section_element = '#most_popular';
+						}
+							
+					
+						else
+						{
+							section_element = '#most_tagged';
+						}
+						
+						$(image_element).appendTo(section_element);
+						
+/*						$(document.createElement("img"))
 					    	.attr({ src: mediathumbnailval['url'], videolink: clickthru})
     						.addClass("thumbs")
     						.appendTo('#intro')
@@ -94,16 +136,14 @@ function getallvideos(val)
         					
 
     						});
+    						*/
     						
-    						//k=k+1;
     						//$('body').append("<h1>creating images<h1></br>");
     						//$('body').append($('img').first().attr("videolink"));
 
 					});
-				
-				//syncmutex = true;
-					
+									
 				});
 				
 				
-		}
+}
