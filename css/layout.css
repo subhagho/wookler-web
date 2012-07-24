@@ -14,8 +14,8 @@ Author: Wookler Inc
 html{overflow-y:scroll;}
 
 /* this set the properties in wookler body */
-body{margin:0; padding:0; font-size:14px; font-family:Georgia, "chalkboard", Times, serif; color:#000000; background-color:#f6f6f6;}
-
+body{width:960px; margin:0 auto; padding:0; font-size:14px; font-family:Georgia, "chalkboard", Times, serif; color:#000000; background-color:#f6f6f6;}
+.main { width:100%; min-width:980px; margin:0 0 10px; clear:both; color:#76797c; }
 .justify{text-align:center;}
 .bold{font-weight:bold;}
 .center{text-align:center;}
@@ -177,7 +177,7 @@ nav a span { display:block; float:rightright; margin-left:5px; }
 nav ul ul { display:none; width:100%; position:absolute; left:0; background:#6a6a6a; }  
 nav ul ul li { float:none; }  
 nav ul ul a { padding:5px 10px; border-left:none; border-right:none; font-size:14px; }  
-nav ul ul a:hover { background-color:#555; }  
+nav ul ul a:hover { background-color:#6a6a6a; }  
 
 
 /*----------------------------------------------Search Bar-------------------------------------*/
@@ -190,7 +190,7 @@ nav ul ul a:hover { background-color:#555; }
 {
 	padding: 5px 9px;
 	height: 23px;
-	width: 880px;
+	width: 840px;
 	border: 1px solid #6a6a6a;
 	font: normal 13px 'chalkboard', chalkboard, helvetica;
 	background: #f1f1f1;
