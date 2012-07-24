@@ -5,7 +5,7 @@ Author: Wookler Inc
 
 nav ul{margin:0; padding:0; list-style:none;}
 
-/* ----------------------------------------------Top Navigation-------------------------------------*/
+/* ----------------------------------------------Top Navigation-------------------------------------
 
 #topnav{padding:20px 0;}
 #topnav li{float:left; margin-right:30px; text-transform:uppercase;}
@@ -20,7 +20,7 @@ nav ul{margin:0; padding:0; list-style:none;}
 #topnav li:hover ul{left:auto;}
 #topnav li:hover{position:static;}
 #topnav li.last{margin-right:0;}
-
+*/
 /* ----------------------------------------------Column Navigation-------------------------------------
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>Wookler</title>
+<title>wookler</title>
 <meta charset="iso-8859-1">
 <link rel="stylesheet" href="../css/layout.css" type="text/css">
 <!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
@@ -16,7 +16,6 @@
 <!-- End Featured Slider Elements -->
 </head>
 <body>	
-
 <script>
 	
 		//$('body').append("<h1>binding event</h1></br>");
@@ -26,63 +25,61 @@
 		});
 		getallvideos();
 
-
    	//$(document).ready($('body').append("<h1>hello world</h1>"+$('img').first().attr('videolink')));
-
-    
+   
 	//$(document).ready(getallvideos());
 	//$(document).ready(helloworld());
 	
 </script>
 
+<!-- This is for top of the browser -->
 <div class="wrapper row1">
   <header id="header" class="clear">
     <hgroup>
-      <h1><a href="#">Wookler</a></h1>
-      <h2>You saw it - We know it</h2>
+    <h1>wooklers.</h1> 
     </hgroup>
   </header>
 </div>
+<!-- Top navigation code -->
+<nav id="topNav">  
+                <ul>  
+                    <li><a href="#" title="Most Watched Video">Most Watched Videos</a></li>  
+                <li>  
+                    <a href="#" title="Nav Link 1">Recently Tagged 
+                    <ul>    
+                        <li><a href="#" title="Celebrity">Celebrity</a></li>  
+                        <li><a href="#" title="Recently Tagged Videos">Shows</a></li>  
+                        <li><a href="#" title="Sub Nav Link 3">Bollywood Connection</a></li>  
+                        <li><a href="#" title="Sub Nav Link 4">Designer</a></li>  
+                        <li class="last"><a href="#" title="Sub Nav Link 5">Sub Nav Link 5</a></li>  
+                    </ul>                  
+                </li>  
+                <li><a href="#" title="Nav Link 1">Most Tagged Video</a></li>  
+                <li><a href="#" title="Nav Link 1">Most Popular</a></li>  
+                <li><a href="#" title="Nav Link 1">Your Account</a></li>  
+            </ul>  
+     </nav>  
 
-<div class="wrapper row2">
-  <nav id="topnav" class="clear">
-    <ul>
-      <li class="active"><a href="..//web/index.html">Home</a></li>
-      <li><a href="..//web/style-demo.html">Today's Tagged Video</a></li>
-      <li><a href="..//web/full-width.html">Most Tagged Video</a></li>
-      </ul>
-  </nav>
+<!-- search bar code -->
+<div>
+<form id="searchbox" action="">
+    <input id="search" type="text" placeholder="Search Videos">
+    <input id="submit" type="submit" value="Search">
+</form>
 </div>
-
-<div class="wrapper row2">
-
-  <form action="?" method="get">
-    <input type="search" placeholder="Search" />
-    <input type="submit" value="Search" />
-  </form>
-</div>
-<!-- content -->
-
-<div class="left_col">
-	<nav>
-    <ul>
-      <li class="active"><a href="..//web/index.html">Merchandising</a></li>
-      <li><a href="..//web/style-demo.html">Celebrity</a></li>
-      <li><a href="..//web/full-width.html">Music</a></li>
-      <li><a href="..//web/full-width.html">Background</a></li>
-      </ul>
-  </nav>
-</div>
-    <!-- Slider -->
+<br>
+<!-- loading videos -->
 <div class="ytplayer" id="mainplayer"></div>
-
     <div class="bottom_video_bar">
-      <!-- ########################################################################################## -->
-      	
-      <!-- Introduction -->
-    <h1><br>Recently Tagged Videos <br></h1>
+</div>
+ <!-- This is section id for most popular videos. Not changing the section id -->
+<br><br>
+    <h6>Most Popular Videos </h6>
+<br>
+
+<div>
        <section id="intro" class="clear">
-<!--        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
+       <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
         </article>
         <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
         </article>
@@ -92,18 +89,49 @@
         </article>
         <article class="one_fifth lastbox"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
         </article>
--->
+
       </section>
      </div>
-      <!-- / Introduction -->
-      <!-- ########################################################################################## -->
-      <!-- Services -->
-<!-- Footer -->
-<!-- Copyright -->
-<div class="wrapper row5">
-  <footer id="copyright" class="clear">
-    <p class="fl_left">Copyright &copy; 2012 Wookler - All Rights Reserved - <a href="#">www.wookler.com</a></p>
-  </footer>
-</div>
+<!-- This is section id for most Tagged videos. Not changing the section id -->
+<br>
+    <h6>Most Tagged Videos </h6>
+<br>
+
+<div>
+       <section id="intro" class="clear">
+       <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth lastbox"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+
+      </section>
+     </div>
+    <!-- This is section id for most Tagged videos. Not changing the section id -->
+<br>
+    <h6>Recently Tagged Video </h6>
+<br>
+
+<div>
+       <section id="intro" class="clear">
+       <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>          
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+        <article class="one_fifth lastbox"><a href="#"><img src="..//images/demo/166x130.gif" width="166" height="130" alt=""></a>
+        </article>
+
+      </section>
+     </div> 
+     
 </body>
 </html>
