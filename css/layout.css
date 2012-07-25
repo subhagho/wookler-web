@@ -3,17 +3,12 @@ File: Main Layout
 Author: Wookler Inc
 */
 
-@import url(navi.css);
-@import url(forms.css);
-@import url(tables.css);
-@import url(slider.css);
-@import url(homepage.css);
-@import url(gallery.css);
-@import url(portfolio.css);
+
 
 html{overflow-y:scroll;}
 
 /* this set the properties in wookler body */
+/*
 body{width:960px; margin:0 auto; padding:0; font-size:14px; font-family:Georgia, "chalkboard", Times, serif; color:#000000; background-color:#f6f6f6;}
 .main { width:100%; min-width:980px; margin:0 0 10px; clear:both; color:#76797c; }
 .justify{text-align:center;}
@@ -32,28 +27,30 @@ a{outline:none; text-decoration:none;}
 
 .fl_left{float:left;}
 .fl_right{float:right;}
-
+*/
 /*----------------------------------------------HTML 5 Overrides-------------------------------------*/
 
-address, article, aside, figcaption, figure, footer, header, hgroup, nav, section{display:block; margin:0; padding:0;}
+/*address, article, aside, figcaption, figure, footer, header, hgroup, nav, section{display:block; margin:0; padding:0;}--*/
 
-q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#f6f6f6; font-style:italic; line-height:normal;}
-q:before{content:'ì '; font-size:26px;}
-q:after{content:' Ñ'; font-size:26px; line-height:0;}
+/* address, article, aside, figcaption, figure, footer, header, hgroup, nav, section{display:block; margin:0; padding:0;} --*/S
+
+/* q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#f6f6f6; font-style:italic; line-height:normal;} */
+/* q:before{content:'ì '; font-size:26px;} */
+/* q:after{content:' Ñ'; font-size:26px; line-height:0;} */
 
 /* ----------------------------------------------Wrapper-------------------------------------*/
-
+/*
 div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
 .row1, .row1 a{color:#000000; border:1; background-color:#B5B5B5}
 
-
+*/
 /*----------------s------------------------------General-------------------------------------*/
-
+/*
 #header, #topnav1, #sidenav, #container, #footer, #copyright{display:block; width:980px; margin:0 auto;}
-
-h2, h3, h4, h5 {margin:0; padding:0; font-size:30px; font-weight:normal; line-height:normal chalkboard;}
-h6 {margin:0; padding:5px; font:normal 5px  chalkboard, chalkboard}
+*/
+h2, h3, h4, h5 {margin:0; padding:0; font-size:15px; font-weight:normal; line-height:normal chalkboard;}
+h6 {margin:0; padding:5px; font:normal 20px  chalkboard, chalkboard}
 h1 {margin:0; padding:5px; font:normal 30px  chalkboard, chalkboard}
 /*--
 padding: 5px 9px;
@@ -70,43 +67,43 @@ padding: 5px 9px;
 }
 --*/
 
-h6 {margin:0; padding:0; font-size:20px; font-weight:normal; line-height:normal chalkboard;}
-.one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:0 40px 0 0;}
+.one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:0 5px 0 0;}
 .one_quarter{width:210px;}
 .two_quarter{width:460px;}
 .three_quarter{width:710px;}
 .four_quarter{width:960px; float:none; margin-right:0; clear:both;}
 
-.one_third, .two_third, .three_third{display:block; float:left; margin:0 30px 0 0;}
+.one_third, .two_third, .three_third{display:block; float:left; margin:0 5px 0 0;}
 .one_third{width:300px;}
 .two_third{width:630px;}
 .three_third{width:960px; float:none; margin-right:0; clear:both;}
 
-.one_fifth, .two_fifth, .three_fifth, .four_fifth, .five_fifth{display:block; float:left; margin:0 20px 0 0;}
+.one_fifth, .two_fifth, .three_fifth, .four_fifth, .five_fifth{display:block; float:left; margin:0 5px 0 0;}
 .one_fifth{width:176px;}
 .two_fifth{width:372px;}
 .three_fifth{width:568px;}
 .four_fifth{width:764px;}
-.five_fifth{width:960px; float:none; margin-right:0; clear:both;}
+.five_fifth{width:960px; float:none; margin-right:0 auto; clear:both;}
 
 .lastbox{margin-right:0;}
 
 .more{text-align:right; clear:both;}
 
 /*----------------------------------------------Header-------------------------------------*/
-
+/*
 #header{padding:5px 0;}
 #header hgroup{float:left;}
 #header hgroup h1, #header hgroup h2{font-weight:normal; font-style:normal; text-transform:none chalkboard;}
 #header hgroup h1{font-size:36px chalkboard;}
 #header hgroup h2{font-size:13px chalkboard;}
-	
+/*	
 
 /* ------Content-----*/
-
+/*
 #container #content{float:left; width:630px; margin-bottom:0;}
+*/
 /*----------------------------------------------Footer-------------------------------------*/
-
+/*
 #footer{padding:30px 0; line-height:1.6em;}
 
 #footer section{margin-bottom:0;}
@@ -117,72 +114,35 @@ h6 {margin:0; padding:0; font-size:20px; font-weight:normal; line-height:normal 
 
 
 /* ---Gallery Thumbs---*/
-
+/*
 #footer .ft_gallery li{float:left; margin:0 15px 15px 0; line-height:normal;}
 #footer .ft_gallery li.last{margin-right:0;}
-
+*/
 /* ---Tweet Box---*/
 
 #footer .ft_tweets li{margin-bottom:10px;}
 
 /* ------Quick Links-----*/
-
+/*
 #footer section nav li{margin:0 0 8px 0; padding:0 0 5px 0; border-bottom:1px solid #555555;}
 #footer section nav li.last{margin:0;}
 #footer section nav a{padding:0 0 0 10px; background:url("../images/arrow.gif") left center no-repeat;}
-
+*/
 /*----------------------------------------------Copyright-------------------------------------*/
 
 #copyright{padding:20px 0;}
 #copyright p{margin:0; padding: 0;}
 
 /*----------------------------------------------Top Navigation-------------------------------------*/
-
-/* CSS3 */  
-.borderradius nav { 
-	-moz-border-radius:42px; 
-	-webkit-border-radius:42px; 
-	border-radius:42px; 
-	}  
-.cssgradients nav { 
-	background-image:-moz-linear-gradient(0% 22px 90deg, #222, #999); 
-	background-image:-webkit-gradient(linear, 0% 0%, 0% 70%, from(#999), to(#222)); 
-	}  
-.boxshadow.rgba nav { 
-	-moz-box-shadow:2px 2px 2px rgba(0,0,0,.75); 
-	-webkit-box-shadow:2px 2px 2px rgba(0,0,0,.75); 
-	box-shadow:2px 2px 2px rgba(0,0,0,.75); 
-	}  
-.cssgradients nav li:hover { 
-	background-image:-moz-linear-gradient(0% 100px 90deg, #999, #222); 
-	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#222), to(#555)); }  
-.borderradius nav ul ul { 
-	-moz-border-radius-bottomleft:4px; 
-	-moz-border-radius-bottomright:4px; 
-	-webkit-border-bottom-left-radius:4px; 
-	-webkit-border-bottom-rightright-radius:4px; 
-	border-bottom-left-radius:4px; 
-	border-bottom-rightright-radius:4px; 
-	}  
-.boxshadow.rgba nav ul ul { 
-	background-color:rgba(0,0,0,0.8); 
-	-moz-box-shadow:2px 2px 2px rgba(0,0,0,.8);
-	-webkit-box-shadow:2px 2px 2px rgba(0,0,0,.8); 
-	box-shadow:2px 2px 2px rgba(0,0,0,.8); 
-	}  
-.rgba nav ul ul li { border-left:1px solid rgba(0,0,0,0.1); border-right:1px solid rgba(0,0,0,0.1); }  
-.rgba nav ul ul a:hover { background-color:rgba(85,85,85,.9); }  
-.borderradius.rgba nav ul ul li.last { border-left:1px solid rgba(0,0,0,0.1); border-bottom:1px solid rgba(0,0,0,0.1); -moz-border-radius-bottomleft:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-left-radius:4px; -webkit-border-bottom-rightright-radius:4px; border-bottom-left-radius:4px; border-bottom-rightright-radius:4px; }  
-.csstransforms ul a span { -moz-transform:rotate(-180deg);-webkit-transform:rotate(-180deg); }
-
 /* New CSS COde for navigation */
 
 /* JS disabled styles */  
 .no-js nav li:hover ul { display:block; }  
   
 /* base nav styles - The first rule is purely for when JavaScript is disabled, and allows the hidden submenu to be displayed on hover purely with CSS. The rest of the code defines a set of base styles that format the <nav> menu in the way that we want without adding anything too decorative. Note that we’re using the :after pseudo-selector to clear the floated list items; normally this would be added using a class name to that it could be applied to the containers of any floated elements on the page. At this point our page should look like this:  
- */  
-nav { display:block; margin:0 auto 20px; border:2px solid #222; position:relative; background-color:#6a6a6a; font:14px chalkboard; }  
+ */ 
+
+/*nav { display:block; margin:0 auto 10px; border:2px solid #222; position:relative; background-color:#6a6a6a; font:14px chalkboard; }  
 nav ul { padding:0; margin:0; }  
 nav li { position:relative; float:left; list-style-type:none; }  
 nav ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }  
@@ -193,10 +153,219 @@ nav li.last a { border-right:none; }
 nav a span { display:block; float:rightright; margin-left:5px; }  
 nav ul ul { display:none; width:100%; position:absolute; left:0; background:#6a6a6a; }  
 nav ul ul li { float:none; }  
-nav ul ul a { padding:5px 10px; border-left:none; border-right:none; font-size:14px; }  
+nav ul ul a { padding:5px 10px; border-left:none; border-right:none; font-size:14px; } 
 nav ul ul a:hover { background-color:#6a6a6a; }  
+*/
+/*
+width:960px; margin:0 auto; padding:0; font-size:14px; font-family:Georgia, "chalkboard", Times, serif; color:#000000; background-color:#f6f6f6;
+*/
+
+section,
+nav,
+figure{
+	/* Giving a display value to the HTML5 rendered elements: */
+	display:block;
+}
+
+body{
+	/* Setting the default text color, size, page background and a font stack: */
+	width:960px; margin:0 auto; padding:0; font-size:14px;
+	font-size:0.825em;
+	color:#fcfcfc;
+	background-color:#355664;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Hyperlink Styles: */
+
+a, a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+a img{
+	border:none;
+}
+
+/* Headings: */
+
+h1,h2,h3{
+	font-family:"Myriad Pro","chalkboard",Helvetica,Arial,Sans-Serif;
+	text-shadow:0 1px 1px black;
+}
+
+h1{
+	/* The logo text */
+	font-size:3.5em;
+	padding:0.5em 0 0;
+	
+}
+
+h3{
+	/* The slogan text */
+	font-family:forte,"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+	font-size:2em;
+	font-weight:normal;
+	margin:0 0 1em;
+}
 
 
+h2{
+	font-size:2.2em;
+	font-weight:normal;
+	letter-spacing:0.01em;
+	text-transform:uppercase;
+}
+
+p{
+	line-height:1.5em;
+	padding-bottom:1em;
+}
+
+.line{
+	/* The dividing line: */
+	height:1px;
+	background-color:#24404c;
+	border-bottom:1px solid #416371;
+	margin:1em 0;
+	overflow:hidden;
+}
+
+article .line{
+	/* The dividing line inside of the article is darker: */
+	background-color:#15242a;
+	border-bottom-color:#204656;
+	margin:0.3em 0;
+}
+
+nav{
+	background:#f8f8f8;
+	padding:0 1px;
+	position:absolute;
+	left:800px;
+	top:3.5em;
+	height:29px;
+	
+	border:1px solid #213E4A;
+
+}
+
+/* The clearfix hack to clear the floats: */
+
+.clear:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* The navigation styling: */
+
+nav ul li{
+	display:inline;
+}
+
+nav ul li a,
+nav ul li a:visited{
+	color:#565656;
+	min-height:180px;
+	float:center;
+	font-size:1.00em;
+	font-weight:normal;
+	margin:5px 2px;
+	padding:7px 10px 4px;
+	text-shadow:0 1px 1px white;
+	text-transform:uppercase;
+}
+
+nav ul li a:hover{
+	text-decoration:none;
+	background-color:#f0f0f0;
+}
+
+nav, article, nav ul li a,figure{
+	/* Applying CSS3 rounded corners: */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+
+/* Article styles: */
+
+#page{
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+
+article{
+	background-color:#213E4A;
+	margin:3em 2;
+	padding:5px;
+	text-shadow:0 2px 0 black;
+}
+
+figure{
+	border:3px solid #142830;
+	float:right;
+	height:300px;
+	margin-left:15px;
+	overflow:hidden;
+	width:500px;
+}
+
+figure:hover{
+	-moz-box-shadow:0 0 2px #4D7788;
+	-webkit-box-shadow:0 0 2px #4D7788;
+	box-shadow:0 0 2px #4D7788;
+}
+
+figure img{
+	margin-left:-60px;
+}
+
+/* Footer styling: */
+
+footer{
+	margin-bottom:30px;
+	text-align:center;
+	font-size:0.825em;
+}
+
+
+footer p{
+	margin-bottom:-2.5em;
+	position:relative;
+}
+
+footer a,footer a:visited{
+	color:#cccccc;
+	background-color:#213e4a;
+	display:block;
+	padding:2px 4px;
+	z-index:100;
+	position:relative;
+}
+
+footer a:hover{
+	text-decoration:none;
+	background-color:#142830;
+}
+
+footer a.by{
+	float:left;
+
+}
+
+footer a.up{
+	float:right;
+}
 /*----------------------------------------------Search Bar-------------------------------------*/
 #search, #submit
 {
@@ -208,7 +377,7 @@ nav ul ul a:hover { background-color:#6a6a6a; }
 	padding: 5px 9px;
 	height: 23px;
 	width: 840px;
-	border: 1px solid #333333;
+	border: 1px solid #CFCECE;
 	font: normal 13px chalkboard, chalkboard;
 	background: #f1f1f1;
 	-moz-border-radius: 50px 3px 3px 50px;
@@ -222,28 +391,22 @@ nav ul ul a:hover { background-color:#6a6a6a; }
 
 #submit
 {		
-	background: #6a6a6a;
-	background-image: -moz-linear-gradient(#6a6a6a, #6a6a6a);
-	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #6cbb6b),color-stop(1, #6a6a6a));
+	background: #204656;
 	
 	-moz-border-radius: 3px 50px 50px 3px;
 	border-radius: 3px 50px 50px 3px;
 	
-	border-width: 1px;
+	border-width: 2px;
 	border-style: solid;
-	border-color: #6a6a6a #6a6a6a #6a6a6a;
+	border-color: #CFCECE;
 	
-	 -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-	 -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-	 box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;   		
-
 	height: 35px;
 	margin: 0 0 0 10px;
     padding: 0;
 	width: 90px;
 	cursor: pointer;
-	font: bold 14px Arial, Helvetica;
-	color: #6a6a6a;
+	font: bold 14px Arial, Helvetica;color:#CFCECE
+	
 	
 	/*text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
 }

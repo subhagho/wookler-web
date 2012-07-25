@@ -31,37 +31,50 @@
    
 	//$(document).ready(getallvideos());
 	//$(document).ready(helloworld());
-	
 </script>
-
+<script>
+		function loadproducts()
+		{
+			$.getJSON("../agile_carousel_data.php", function(data) {
+			            $("#flavor_2").agile_carousel({
+			                carousel_data: data,
+			                carousel_outer_height: 360,
+			                carousel_height: 350,
+			                slide_height: 350,
+			                carousel_outer_width: 380,
+			                slide_width: 380,
+			                transition_type: "fade",
+			                transition_time: 600,
+			                timer: 3000,
+			                continuous_scrolling: true,
+			                control_set_1: "numbered_buttons,previous_button,pause_button,next_button",
+			                control_set_2: "content_buttons",
+			                change_on_hover: "content_buttons"
+			            });
+			    });
+		   }
+		   
+	</script>
 <!-- This is for top of the browser -->
-<div class="wrapper row1">
-  <header id="header" class="clear">
-    <hgroup>
-    <h1>wooklers.</h1> 
-    </hgroup>
+<section class="page">
+<!--<div class="wrapper row1"> -->
+ <header> <!-- Defining the header section of the page with the appropriate tag -->
+            
+                <hgroup>
+                    <h1>Wookler</h1>
+                </hgroup>
+                                
+                <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
+                    <ul>
+                        <li><a href="#article1">Feature Videos</a></li>
+                        <li><a href="#article2">Hot Products</a></li>
+                        <li><a href="#article3">Account</a></li>
+                    </ul>
+                </nav>
+          
   </header>
-</div>
-<!-- Top navigation code -->
-<nav id="topNav">  
-                <ul>  
-                    <li><a href="#" title="Most Watched Video">Most Watched Videos</a></li>  
-                <li>  
-                    <a href="#" title="Nav Link 1">Recently Tagged 
-                    <ul>    
-                        <li><a href="#" title="Celebrity">Celebrity</a></li>  
-                        <li><a href="#" title="Recently Tagged Videos">Shows</a></li>  
-                        <li><a href="#" title="Sub Nav Link 3">Bollywood Connection</a></li>  
-                        <li><a href="#" title="Sub Nav Link 4">Designer</a></li>  
-                        <li class="last"><a href="#" title="Sub Nav Link 5">Sub Nav Link 5</a></li>  
-                    </ul>                  
-                </li>  
-                <li><a href="#" title="Nav Link 1">Most Tagged Video</a></li>  
-                <li><a href="#" title="Nav Link 1">Most Popular</a></li>  
-                 
-            </ul>  
-     </nav>  
-
+  <div class="line"></div>
+ 
 <!-- search bar code -->
 <div>
 <form id="searchbox" action="">
@@ -69,35 +82,40 @@
     <input id="submit" type="submit" value="Search">
 </form>
 </div>
+
 <br>
+<br>
+ 
 <!-- loading videos -->
+
 <div class="ytplayer" id="mainplayer"></div>
     <div class="bottom_video_bar">
 </div>
- <!-- This is section id for most popular videos. Not changing the section id -->
+
+<!-- This is section id for most popular videos. Not changing the section id -->
 <br><br>
-    <h6>Most Popular Videos </h6>
-<br>
 
 <div>
+<h6>Most Popular Videos </h6><br>
        <section id="most_popular" class="clear"></section>
-     </div>
+</div>
 <!-- This is section id for most Tagged videos. Not changing the section id -->
-<br>
-    <h6>Most Tagged Videos </h6>
-<br>
+<br> 
 
 <div>
+	   <h6>Most Tagged Videos </h6><br>
        <section id="most_tagged" class="clear"></section>
      </div>
     <!-- This is section id for most Tagged videos. Not changing the section id -->
 <br>
-    <h6>Recently Tagged Video </h6>
-<br>
-
 <div>
+	   <h6>Recently Tagged Video </h6><br>
        <section id="recent_tagged" class="clear"></section>
-     </div> 
-     
+</div> 
+<div>
+	   <h5>About xxxxx result - Use sorting param on left </h5><br>
+       <section id="search results" class="clear"></section>
+</div> 
+</section>     
 </body>
 </html>
