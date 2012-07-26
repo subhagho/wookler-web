@@ -11,6 +11,7 @@
 <script src="../scripts/jquery-s3slider.setup.js"></script>
 <script src="../scripts/getvideos.js"></script>
 <script src="../scripts/ytvideos.js"></script>
+<script src="../scripts/getcreatives.js"></script>
 <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
 
 <!-- End Featured Slider Elements -->
@@ -20,12 +21,14 @@
 	
 		//$('body').append("<h1>binding event</h1></br>");
 
-		$('#intro').on("sectionloaded", function(){
+/*		$('#intro').on("sectionloaded", function(){
 			$('body').append($('img').first().attr("videolink"));
-		});
+		});*/
 		getallvideos('popular');
 		getallvideos('latest');
 		getallvideos('all');
+		//getallvideos(1);
+		//getcreatives(1);
 
    	//$(document).ready($('body').append("<h1>hello world</h1>"+$('img').first().attr('videolink')));
    
