@@ -314,10 +314,10 @@ article{
 figure{
 	border:3px solid #142830;
 	float:right;
-	height:300px;
+	height:200px;
 	margin-left:15px;
 	overflow:hidden;
-	width:500px;
+	width:400px;
 }
 
 figure:hover{
@@ -435,4 +435,6 @@ footer a.up{
 
 /*---this is testing heading ---*/
 
-
+dynamicTable { font:.7em Arial; border:1px solid gray; }
+        .dynamicTableTh { background-color:#584df0; color:White;}
+        .dynamicTableTd { padding:3px; width:90px; color:red }
