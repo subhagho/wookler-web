@@ -32,29 +32,7 @@
 	//$(document).ready(getallvideos());
 	//$(document).ready(helloworld());
 </script>
-<script>
-		function loadproducts()
-		{
-			$.getJSON("../agile_carousel_data.php", function(data) {
-			            $("#flavor_2").agile_carousel({
-			                carousel_data: data,
-			                carousel_outer_height: 360,
-			                carousel_height: 350,
-			                slide_height: 350,
-			                carousel_outer_width: 380,
-			                slide_width: 380,
-			                transition_type: "fade",
-			                transition_time: 600,
-			                timer: 3000,
-			                continuous_scrolling: true,
-			                control_set_1: "numbered_buttons,previous_button,pause_button,next_button",
-			                control_set_2: "content_buttons",
-			                change_on_hover: "content_buttons"
-			            });
-			    });
-		   }
-		   
-	</script>
+
 <!-- This is for top of the browser -->
 <section class="page">
 <!--<div class="wrapper row1"> -->
@@ -85,18 +63,56 @@
 
 <br>
 <br>
- 
+
+<table>
+</table>
+<br />
+<button>add</button> 
 <!-- loading videos -->
 
-<div class="ytplayer" id="mainplayer"></div>
-    <div class="bottom_video_bar">
-</div>
+	<div class="ytplayer" id="mainplayer"></div>
+	<div class="bottom_video_bar"></div>
 
 <!-- This is section id for most popular videos. Not changing the section id -->
+
 <br><br>
 
+
+<h6>Featured Products</h6><br>
+
+<!-- START This is test code for article -->
+
+<article class="hentry">
+ 
+  <div class="entry-content">
+      <p>...article text...</p>
+      <p>...article text...</p>
+   
+      <figure>
+        <img src="..//images/glasses.jpeg" alt="Portrait of Tammy Strobel" />
+        <figcaption>Associated Video Goes here</figcaption>
+      </figure>
+ <aside>
+        <h2>Save it or buy now</h2>
+        <ul>
+          <li>Amazon</li>
+          <li>eBay</li>
+          <li>Etc</li>
+        </ul>
+      </aside>
+   
+      <div class="entry-content-asset">
+        <a href="photo-full.png">
+          <img src="photo.png" alt="The objects Tammy removed from her life after moving" />
+        </a>
+      </div>
+
+  </article>
+
+
+<!-- END This is test code for article -->
+
 <div>
-<h6>Most Popular Videos </h6><br>
        <section id="most_popular" class="clear"></section>
 </div>
 <!-- This is section id for most Tagged videos. Not changing the section id -->
