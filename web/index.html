@@ -17,6 +17,31 @@
 <!-- End Featured Slider Elements -->
 </head>
 <body>	
+	
+	<div id="fb-root"> </div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '178538222278198', // App ID
+      channelUrl : 'http://localhost/Wooks/wookler-web/web/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+</script>
 <script>
 	
 		//$('body').append("<h1>binding event</h1></br>");
@@ -76,7 +101,7 @@
                 </nav>
           
   </header>
-  <div class="line"></div>
+  <div class="line"> </div>
  
 <!-- search bar code -->
 <div>
@@ -88,10 +113,72 @@
 
 <br>
 <br>
+<br>
+<br> 
+			 <button onclick='fblogin()' type="button">LogIn FB</button>
+			
+			 <button onclick='myname()' type="button">My Name</button>
+
+			 <button onclick='postToFeed()' type="button">Post Feed</button>
+
+			
+<script>
+ 
+ function myname() {
+ FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});
+}
+</script>
+
+<script>
+ function fblogin() {
+	FB.login(function(response) {
+   if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ });
+ }
+ 
+ </script>
+    <p id='msg'> </p>
+
+    <script> 
+function postToFeed() {
+
+        // calling the API ...
+        var cap = "Hannah Montana";
+        var obj = {
+          method: 'feed',
+          link: 'https://apps.facebook.com/wookler',
+          picture: 'http://images5.fanpop.com/image/photos/29400000/Hannah-Montana-Christmas-hannah-montana-29409414-300-300.jpg',
+          name: 'Wookler',
+          caption: cap,
+          description: 'Keep your cool'
+        };
+
+        function callback(response) {
+          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+        }
+
+        FB.ui(obj, callback);
+      }
+    
+
+
+
+    
+    </script>
+
  
 <!-- loading videos -->
 
-<div class="ytplayer" id="mainplayer"></div>
+<div class="ytplayer" id="mainplayer"> </div>
     <div class="bottom_video_bar">
 </div>
 
@@ -100,24 +187,24 @@
 
 <div>
 <h6>Most Popular Videos </h6><br>
-       <section id="most_popular" class="clear"></section>
+       <section id="most_popular" class="clear"> </section>
 </div>
 <!-- This is section id for most Tagged videos. Not changing the section id -->
 <br> 
 
 <div>
 	   <h6>Most Tagged Videos </h6><br>
-       <section id="most_tagged" class="clear"></section>
+       <section id="most_tagged" class="clear"> </section>
      </div>
     <!-- This is section id for most Tagged videos. Not changing the section id -->
 <br>
 <div>
 	   <h6>Recently Tagged Video </h6><br>
-       <section id="recent_tagged" class="clear"></section>
+       <section id="recent_tagged" class="clear"> </section>
 </div> 
 <div>
 	   <h5>About xxxxx result - Use sorting param on left </h5><br>
-       <section id="search results" class="clear"></section>
+       <section id="search results" class="clear"> </section>
 </div> 
 </section>     
 </body>
