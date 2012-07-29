@@ -4,6 +4,7 @@ var ytvideolink;
 var url_get_all_videos = "http://localhost:8090/rest/wookler/core/data/videos/-";
 var url_get_latest_videos = "http://localhost:8090/rest/wookler/core/data/videos/latest";
 var url_get_popular_videos = "http://localhost:8090/rest/wookler/core/data/videos/popular";
+var url_get_id_videos = "http://localhost:8090/rest/wookler/core/data/videos/-?q=id=";
 
 
 function getallvideos(val)
@@ -11,21 +12,32 @@ function getallvideos(val)
     
     var url;
 
-	if(val=='latest')
-	{
-		url = url_get_latest_videos;
-	}
-		
-	else if(val== 'popular')
-	{
-		url = url_get_popular_videos;
-	}
-		
 
+	if(typeof(val) == 'number')
+	{
+		url = url_get_id_videos + val;
+		//alert(url);
+	}
+	
 	else
 	{
-		url = url_get_all_videos;
-	}	
+		if(val=='latest')
+		{
+			url = url_get_latest_videos;
+		}
+			
+		else if(val== 'popular')
+		{
+			url = url_get_popular_videos;
+		}
+			
+	
+		else
+		{
+			url = url_get_all_videos;
+		}	
+	
+	}
 	
 	//get videos with appropriate url
 	
@@ -107,20 +119,30 @@ function loadytVideosbyId(videoid, type)
 						
 						var section_element;
 
-						if(type=='latest')
-						{
-							section_element = '#recent_tagged';
-						}
-							
-						else if(type== 'popular')
-						{
-							section_element = '#most_popular';
-						}
-							
-					
-						else
+
+						if(typeof(type) == 'number')
 						{
 							section_element = '#most_tagged';
+						}
+						
+						else
+						{
+	
+							if(type=='latest')
+							{
+								section_element = '#recent_tagged';
+							}
+								
+							else if(type== 'popular')
+							{
+								section_element = '#most_popular';
+							}
+								
+						
+							else
+							{
+								section_element = '#most_tagged';
+							}
 						}
 						
 						$(image_element).appendTo(section_element);
