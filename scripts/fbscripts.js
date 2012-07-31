@@ -18,7 +18,7 @@
         var cap = "Hannah Montana";
         var obj = {
           method: 'feed',
-          link: 'https://apps.facebook.com/wookler',
+          link: 'http://localhost:8090/web/web/products.html?id=123',
           picture: 'http://images5.fanpop.com/image/photos/29400000/Hannah-Montana-Christmas-hannah-montana-29409414-300-300.jpg',
           name: 'Wookler',
           caption: cap,
