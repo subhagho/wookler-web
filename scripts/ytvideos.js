@@ -32,6 +32,7 @@
         
       function loadAndPlayVideo(val)
       {
+      	//alert('toplay'+val);
       	if(!player)
       	{
       	  player = new YT.Player('mainplayer', {

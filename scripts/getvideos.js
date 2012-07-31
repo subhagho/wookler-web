@@ -54,13 +54,13 @@ function getallvideos(val)
 				if(vsrc=="YouTube")
 				{
 					//pass
-					loadytVideosbyId(video.location, val);
+					loadytVideosbyId(video.refid, val);
 				}
 				
 			});
 		
 		// in the end attach a custom event to section		
-		$('#intro').trigger("sectionloaded");
+		//$('#intro').trigger("sectionloaded");
 	});
 
 }
@@ -113,8 +113,9 @@ function loadytVideosbyId(videoid, type)
 						var clickthru = videolink.substring(start_index+3,end_index);
 						//alert("clickthru url: "+clickthru);
 						
-						var image_element = "<article class='one_fifth'><img src='"+mediathumbnailval['url']+"' width='166' height='130' onclick='loadAndPlayVideo(\""+clickthru+"\")'></img></article>";
+						//var image_element = "<article class='one_fifth'><img src='"+mediathumbnailval['url']+"' width='166' height='130' onclick='loadAndPlayVideo(\""+clickthru+"\")'></img></article>";
 						
+						var image_element = "<figure class='img-indent frame'><img src='"+mediathumbnailval['url']+"' width='200' height='160' onclick='loadAndPlayVideo(\""+clickthru+"\")'/></figure>";
 						//alert(image_element);
 						
 						var section_element;
@@ -122,7 +123,7 @@ function loadytVideosbyId(videoid, type)
 
 						if(typeof(type) == 'number')
 						{
-							section_element = '#most_tagged';
+							section_element = '#imagegrid';
 						}
 						
 						else

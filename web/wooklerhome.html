@@ -8,18 +8,59 @@
     <link rel="stylesheet" href="../css/grid.css" type="text/css" media="screen"> 
     <script src="../js/jquery-1.6.2.min.js" type="text/javascript"></script>
     <script src="../js/jquery.galleriffic.js" type="text/javascript"></script>
-    <script src="../js/jquery.opacityrollover.js" type="text/javascript"></script>      
-	<!--[if lt IE 7]>
-        <div style=' clear: both; text-align:center; position: relative;'>
-            <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/../images/banners/warning_bar_0000_us.jpg" border="0"  alt="" /></a>
-        </div>
-	<![endif]-->
-    <!--[if lt IE 9]>
-   		<script type="text/javascript" src="js/html5.js"></script>
-        <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
-	<![endif]-->
+    <script src="../js/jquery.opacityrollover.js" type="text/javascript"></script>
+	<script src="../scripts/getvideos.js"></script>
+	<script src="../scripts/ytvideos.js"></script>
+	<script src="../scripts/getcreatives.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>      
+
 </head>
 <body id="page1">
+
+<script>
+
+	getallvideos(1);
+	
+</script>
+
+<div id="fb-root"> </div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '178538222278198', // App ID
+      channelUrl : 'http://localhost/Wooks/wookler-web/web/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+</script>
+
+
+			
+<script>
+ 
+ function myname() {
+ FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});
+}
+</script>
+
+
+	
 	<!--==============================header=================================-->
     <header>
     	<div class="row-1">
@@ -28,7 +69,7 @@
                 	<div class="grid_12">
                     	<nav>
                             <ul class="menu">
-                                <li><a class="active" href="index.html">Home</a></li>
+                                <li><a class="active" href="wooklerhome.html">Home</a></li>
                                 <li><a href="services.html">Hot Products</a></li>
                                 <li><a href="catalogue.html">Popular</a></li>
                                 <li><a href="pricing.html">Pricing</a></li>
@@ -78,14 +119,12 @@
                             		<div class="wrapper">
                                 		<article class="grid_12">
                                     		<div class="wrapper">
-                                        		<article class="grid_6 alpha">
-                                        			This is place holder for product pictures
-                                                	<figure class="img-indent frame"><img src="../images/ms.jpg" alt="" width="436" height="350" alt="This is for product prictures"/></figure>
-                                                	                                           </article>
-                                            <article class="grid_6 omega">
-                                            	Placeholder for videos that would be shown here.
-                                                <figure class="img-indent frame"><img src="../images/demo/thelastsong.jpg" width="436" height="350" alt="This is for video player" /></figure>
-                                            </article>
+                                        		<article id="imagegrid" class="grid_6 alpha"></article>
+                                           
+                                            <article id="mainplayer" class="grid_6 omega">
+                          	                     <div class="ytplayer" id="mainplayer"></div>
+
+                                                <!--<figure class="img-indent frame"><img src="../images/demo/thelastsong.jpg" width="436" height="350" alt="This is for video player" /></figure>-->
                                         </div>
                                     </article>
                                 </div> 
@@ -114,6 +153,15 @@
                                   </div>
                                    -->
                                 </div>
+                                
+<br>
+<br> 
+			 <button onclick='fblogin()' type="button">LogIn FB</button>
+			
+			 <button onclick='myname()' type="button">My Name</button>
+
+			 <button onclick='postToFeed()' type="button">Post Feed</button>
+
                                 <div class="inner">
                                     <div class="wrapper">
                                     	This is bottom bar where product info will be displayed
