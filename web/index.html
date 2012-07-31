@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
 	<![endif]-->
 </head>
+<<<<<<< HEAD
 <body id="page1">
 	<!--==============================header=================================-->
     <header>
@@ -201,6 +202,35 @@
 			// We only want these styles applied when javascript is enabled
 			$('div.navigation').css({'width' : '320px', 'float' : 'right'});
 			$('div.content').css('display', 'block');
+=======
+<body>	
+	
+	<div id="fb-root"> </div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '178538222278198', // App ID
+      channelUrl : 'http://localhost/Wooks/wookler-web/web/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+</script>
+<script>
+>>>>>>> 1804991a0094e85e63254031b11e01e7bee1ba89
 	
 			// Initially set opacity on thumbs and add
 			// additional styling for hover effect on thumbs
@@ -249,5 +279,132 @@
 			});
 		});
 	</script>
+<<<<<<< HEAD
+=======
+<!-- This is for top of the browser -->
+<section class="page">
+<!--<div class="wrapper row1"> -->
+ <header> <!-- Defining the header section of the page with the appropriate tag -->
+            
+                <hgroup>
+                    <h1>Wookler</h1>
+                </hgroup>
+                                
+                <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
+                    <ul>
+                        <li><a href="#article1">Feature Videos</a></li>
+                        <li><a href="#article2">Hot Products</a></li>
+                        <li><a href="#article3">Account</a></li>
+                    </ul>
+                </nav>
+          
+  </header>
+  <div class="line"> </div>
+ 
+<!-- search bar code -->
+<div>
+<form id="searchbox" action="">
+    <input id="search" type="text" placeholder="Search Videos">
+    <input id="submit" type="submit" value="Search">
+</form>
+</div>
+
+<br>
+<br>
+<br>
+<br> 
+			 <button onclick='fblogin()' type="button">LogIn FB</button>
+			
+			 <button onclick='myname()' type="button">My Name</button>
+
+			 <button onclick='postToFeed()' type="button">Post Feed</button>
+
+			
+<script>
+ 
+ function myname() {
+ FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});
+}
+</script>
+
+<script>
+ function fblogin() {
+	FB.login(function(response) {
+   if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ });
+ }
+ 
+ </script>
+    <p id='msg'> </p>
+
+    <script> 
+function postToFeed() {
+
+        // calling the API ...
+        var cap = "Hannah Montana";
+        var obj = {
+          method: 'feed',
+          link: 'https://apps.facebook.com/wookler',
+          picture: 'http://images5.fanpop.com/image/photos/29400000/Hannah-Montana-Christmas-hannah-montana-29409414-300-300.jpg',
+          name: 'Wookler',
+          caption: cap,
+          description: 'Keep your cool'
+        };
+
+        function callback(response) {
+          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+        }
+
+        FB.ui(obj, callback);
+      }
+    
+
+
+
+    
+    </script>
+
+ 
+<!-- loading videos -->
+
+<div class="ytplayer" id="mainplayer"> </div>
+    <div class="bottom_video_bar">
+</div>
+
+<!-- This is section id for most popular videos. Not changing the section id -->
+<br><br>
+
+<div>
+<h6>Most Popular Videos </h6><br>
+       <section id="most_popular" class="clear"> </section>
+</div>
+<!-- This is section id for most Tagged videos. Not changing the section id -->
+<br> 
+
+<div>
+	   <h6>Most Tagged Videos </h6><br>
+       <section id="most_tagged" class="clear"> </section>
+     </div>
+    <!-- This is section id for most Tagged videos. Not changing the section id -->
+<br>
+<div>
+	   <h6>Recently Tagged Video </h6><br>
+       <section id="recent_tagged" class="clear"> </section>
+</div> 
+<div>
+	   <h5>About xxxxx result - Use sorting param on left </h5><br>
+       <section id="search results" class="clear"> </section>
+</div> 
+</section>     
+>>>>>>> 1804991a0094e85e63254031b11e01e7bee1ba89
 </body>
 </html>
