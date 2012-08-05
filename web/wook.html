@@ -15,39 +15,12 @@
 
  </head>
   <body class="women">
-
-<div id="fb-root"> </div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '178538222278198', // App ID
-      channelUrl : 'http://localhost:8090/web/web/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
-
-    // Additional initialization code here
-  };
-
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
-
-</script>
+    <div id="fb-root"></div>
     
 <link type="text/css" media="screen" rel="stylesheet" href="../css/wookler.css" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<!--<script src="../scripts/wookler.js"></script>-->
 <script src="../scripts/getcreatives.js"></script>
-<script src="../scripts/getvideos.js"></script>
-<script src="../scripts/ytvideos.js"></script>
-<script src="../scripts/fbscripts.js"></script>
-
 
 
 <div class="global-nav-wrapper" style="z-index: 100; position:relative">  
@@ -160,7 +133,7 @@
  <ul id="top-utilities" class="top-utilities clearfix">
   
       <li class="become-a-member"><a href="">Become a Member</a></li>
-      <li class="sign-in"><a href="" onclick="fblogin()">Sign In</a></li>
+      <li class="sign-in"><a href="">Sign In</a></li>
       <li class="help-item last"><a href="">Need Help?</a></li>
     </ul>
 <!-- / .top-utilities -->
@@ -183,15 +156,69 @@
     </div>
 </div>
 
-<!--
-<div id="ytplayer" class="hero-container brand-callout">
+<div class="hero-container brand-callout">
+</section>
+<section class="hero" style="background:url(../images/MS.jpg) no-repeat center;">
+	<article class="sale" data-gilt-sale-index="0">
+</section>
 </div>
--->
+
 
 <div class="external-sales-container">
-  <section id="individual_product" class="external-sales">
+  <section id="mostviewed" class="external-sales">
+    <h3 class="h3 accent hairline">Most Viewed Products</h3>
   </section>
 </div>
+
+<div class="external-sales-container">
+  <section id ="latstsales" class="external-sales">
+    <h3 class="h3 accent hairline">Latest Sales</h3>
+  </section>
+</div>
+
+<div class="external-sales-container">
+  <section id="featuredproducts" class="external-sales">
+    <h3 class="h3 accent hairline">Featured Products</h3>
+  </section>
+</div>
+
+<div class="external-sales-container">
+  <section id="trendingproducts" class="external-sales">
+    <h3 class="h3 accent hairline">Trending Right Now</h3>
+  </section>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="gilt-welcome">
+<!--  
+<div class="on-the-go-wrapper">
+  <article class="on-the-go">
+    <span class="icon"></span>
+    <h2 class="h2">wookler on the Go</h2>
+    <p class="paragraph">
+      Find as you see anytime, everywhere. Download our mobile app to your smartphone or tablet and shop sales on the fly.
+    </p>
+    <a class="button tint tertiary no_sso" href="">Download Now</a>
+  </article> 
+</div> 
+
+.on-the-go-wrapper -->
+<article class="today-on-gilt">
+  <header class="header">
+    <h2 class="h2">Today on wookler</h2>
+    <p class="paragraph">
+      Teens are mad about these items and they are going fast!!
+    </p>
+    <a class="button tint start-shopping" href="">Start Shopping</a>
+  </header>
+
+  
+</article> <!-- .today-on-gilt -->
+</div>
+    </section>
+
+    
 
 <div class="footer">
   <ul class="nav footer-nav clearfix">
@@ -342,17 +369,7 @@
 
 
 <script>
-
-function getURLParameter(name) {
-    return decodeURI(
-        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
-    );
-}
-
-	//alert(getURLParameter("id"));
-	
-	buildproductpage(getURLParameter("id"));
-	
+	$(document).ready(buildallsections());
 </script>
 
 </body>

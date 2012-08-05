@@ -39,11 +39,14 @@ function getallvideos(val)
 	
 	}
 	
+	
+	
 	//get videos with appropriate url
 	
 	//alert(url);
 	
 	$.getJSON(url, function(jdata){
+
 
 			$.each(jdata.data, function(i,video){
 				
