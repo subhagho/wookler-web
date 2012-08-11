@@ -1,10 +1,10 @@
 
 var ytvideolink;
 
-var url_get_all_videos = "http://localhost:8090/rest/wookler/core/data/videos/-";
-var url_get_latest_videos = "http://localhost:8090/rest/wookler/core/data/videos/latest";
-var url_get_popular_videos = "http://localhost:8090/rest/wookler/core/data/videos/popular";
-var url_get_id_videos = "http://localhost:8090/rest/wookler/core/data/videos/-?q=id=";
+var url_get_all_videos = "http://localhost:8090/rest/wookler/core/media/videos/-";
+var url_get_latest_videos = "http://localhost:8090/rest/wookler/core/media/videos/latest";
+var url_get_popular_videos = "http://localhost:8090/rest/wookler/core/media/videos/popular";
+var url_get_id_videos = "http://localhost:8090/rest/wookler/core/media/videos/-?q=id=";
 
 
 function getallvideos(val)
