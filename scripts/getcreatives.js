@@ -11,7 +11,7 @@ function buildallsections()
 function buildproductsection(type,count)
 {
 
-    var url = "http://localhost:8090/rest/wookler/core/data/products/"+type+"?s="+count;
+    var url = "http://localhost:8090/rest/wookler/core/media/products/"+type+"?s="+count;
    
     var productsection;
    
@@ -42,9 +42,9 @@ function buildproductsection(type,count)
 function buildproductpage(productid)
 {
 	 //hack for now - get all videos and filter for that specific id
-	 //var url = "http://localhost:8090/rest/wookler/core/data/products/-?id="+id;
+	 //var url = "http://localhost:8090/rest/wookler/core/media/products/-?id="+id;
 
-    var url = "http://localhost:8090/rest/wookler/core/data/products/-";
+    var url = "http://localhost:8090/rest/wookler/core/media/products/-";
    	
    	var currenturl = window.location;
    	
